@@ -1,46 +1,53 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow">
 <title>Finals Prep: ACG, MAR, RMI</title>
-<style>
-:root{--bg:#f6f7f9;--card:#fff;--ink:#16181d;--mut:#5d6470;--line:#e3e6eb;--acc:#2456d6;--ok:#178a43;--okb:#e6f6ec;--no:#c62f2f;--nob:#fdecec;--warn:#b26b00;--chip:#eef1f6}
-@media (prefers-color-scheme:dark){:root{--bg:#111317;--card:#1a1d22;--ink:#eceef2;--mut:#9aa2ae;--line:#2b2f36;--acc:#6d95ff;--ok:#4fcf7f;--okb:#123222;--no:#ff7070;--nob:#3a1717;--warn:#f0a43a;--chip:#252a31}}
-*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-.wrap{max-width:880px;margin:0 auto;padding:12px 16px 80px}
-header{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:6px 0 12px}
-header h1{font-size:19px;margin:0;flex:1}
-.who{font-size:13px;color:var(--mut)}
-.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
-.tab{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:8px 12px;border-radius:999px;cursor:pointer;font:600 14px system-ui}
-.tab.on{background:var(--acc);border-color:var(--acc);color:#fff}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:12px}
+<style>:root{--bg:#fff;--card:#fff;--ink:#000;--mut:#6f7680;--line:#e3e5e8;--acc:#00c805;--accink:#000;--ok:#00c805;--okb:rgba(0,200,5,.10);--no:#ff5000;--nob:rgba(255,80,0,.10);--warn:#c79100;--chip:#f2f3f5}
+@media (prefers-color-scheme:dark){:root{--bg:#000;--card:#0b0c0d;--ink:#fff;--mut:#8b9199;--line:#1f2326;--acc:#00c805;--accink:#000;--ok:#00c805;--okb:rgba(0,200,5,.12);--no:#ff5000;--nob:rgba(255,80,0,.13);--warn:#ffb21e;--chip:#16181b}}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;letter-spacing:-.005em}
+.wrap{max-width:760px;margin:0 auto;padding:14px 16px 90px}
+header{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:4px 0 18px}
+header h1{font-size:15px;margin:0;flex:1;font-weight:700;letter-spacing:.02em;text-transform:uppercase;color:var(--acc)}
+.who{font-size:13px;color:var(--mut)}.who a{color:var(--acc);text-decoration:none;font-weight:600}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:14px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.tabs+.tabs{border-bottom:0;padding-bottom:0}
+.tab{border:0;background:transparent;color:var(--ink);padding:8px 12px;border-radius:999px;cursor:pointer;font:700 14px/1 inherit;font-family:inherit}
+.tab:hover{background:var(--chip)}
+.tab.on{background:var(--okb);color:var(--acc)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:12px}
 .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-.btn{border:0;background:var(--acc);color:#fff;font:700 15px system-ui;padding:11px 16px;border-radius:10px;cursor:pointer}
-.btn.sec{background:var(--chip);color:var(--ink)}.btn.sm{padding:7px 11px;font-size:13px}
-.btn:disabled{opacity:.5;cursor:default}
+.btn{border:0;background:var(--acc);color:var(--accink);font:700 15px/1 inherit;font-family:inherit;padding:14px 22px;border-radius:999px;cursor:pointer;transition:filter .15s}
+.btn:hover{filter:brightness(1.08)}
+.btn.sec{background:transparent;color:var(--acc);border:1.5px solid var(--acc)}.btn.sm{padding:8px 13px;font-size:13px}
+.btn:disabled{opacity:.4;cursor:default}
 .mut{color:var(--mut)}.small{font-size:13px}
-.big{font-size:30px;font-weight:800}
+.big{font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.1}
+.delta{font-weight:700;font-size:14px}.delta.up{color:var(--ok)}.delta.down{color:var(--no)}
 .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-.bar{height:10px;background:var(--chip);border-radius:6px;overflow:hidden;display:flex}
+.ccard{cursor:pointer}.ccard.on{border-color:var(--acc)}
+.bar{height:6px;background:var(--chip);border-radius:6px;overflow:hidden;display:flex}
 .bar i{display:block;height:100%}
-.q{font-size:17px;font-weight:600;margin:6px 0 12px;white-space:pre-line}
-.opt{display:flex;gap:10px;width:100%;text-align:left;border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:11px 12px;margin:7px 0;cursor:pointer;font:15px/1.4 system-ui}
-.opt .L{font-weight:800;color:var(--mut);min-width:18px}
+.spark{width:100%;height:64px;display:block;margin:10px 0 4px}
+.chart{width:100%;height:150px;display:block;margin:6px 0 2px}
+.q{font-size:18px;font-weight:600;margin:6px 0 14px;white-space:pre-line;letter-spacing:-.01em}
+.opt{display:flex;gap:12px;width:100%;text-align:left;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:13px 14px;margin:8px 0;cursor:pointer;font:15px/1.45 inherit;font-family:inherit;transition:border-color .12s}
+.opt:hover:not(:disabled){border-color:var(--acc)}
+.opt .L{font-weight:700;color:var(--mut);min-width:18px}
 .opt.right{border-color:var(--ok);background:var(--okb)}.opt.wrong{border-color:var(--no);background:var(--nob)}
 .opt:disabled{cursor:default;opacity:1}
-.fb{border-radius:10px;padding:12px 14px;margin-top:10px;background:var(--okb);white-space:pre-line}
-.fb.no{background:var(--nob)}.fb h3{margin:0 0 6px;font-size:16px}
+.fb{border-radius:12px;padding:14px 16px;margin-top:12px;background:var(--okb);white-space:pre-line;border-left:3px solid var(--ok)}
+.fb.no{background:var(--nob);border-left-color:var(--no)}.fb h3{margin:0 0 6px;font-size:16px}
 .ref{font-size:12px;color:var(--mut);margin-top:8px}
 .chip{display:inline-block;background:var(--chip);border-radius:999px;padding:2px 9px;font-size:12px;margin:2px 4px 2px 0}
-.sect{border-top:1px solid var(--line);padding:10px 0}
-.sect:first-child{border-top:0}
-table{border-collapse:collapse;width:100%;font-size:14px}td,th{padding:6px 4px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
-.grid40{display:flex;flex-wrap:wrap;gap:4px;margin:8px 0}.grid40 b{width:28px;height:28px;border-radius:6px;background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:12px;cursor:pointer}
-.grid40 b.ok{background:var(--ok);color:#fff}.grid40 b.no{background:var(--no);color:#fff}.grid40 b.cur{outline:2px solid var(--acc)}
-input[type=text]{font:16px system-ui;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);width:100%}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;padding:16px;z-index:40}
-.modal .card{max-width:440px;width:100%}
-select{font:15px system-ui;padding:8px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+table{border-collapse:collapse;width:100%;font-size:14px}td,th{padding:9px 4px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--mut);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.03em}
+.grid40{display:flex;flex-wrap:wrap;gap:4px;margin:10px 0}.grid40 b{width:28px;height:28px;border-radius:999px;background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:12px;cursor:pointer}
+.grid40 b.ok{background:var(--ok);color:#000}.grid40 b.no{background:var(--no);color:#000}.grid40 b.cur{outline:2px solid var(--ink)}
+input[type=text]{font:17px inherit;font-family:inherit;padding:14px 16px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);width:100%}
+input[type=text]:focus{outline:none;border-color:var(--acc)}
+.modal{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:16px;z-index:40}
+.modal .card{max-width:420px;width:100%;border:0}
+select{font:15px inherit;font-family:inherit;padding:8px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
 .pill-ok{color:var(--ok);font-weight:700}.pill-no{color:var(--no);font-weight:700}.pill-w{color:var(--warn);font-weight:700}
 details summary{cursor:pointer;font-weight:600}
+input[type=checkbox]{accent-color:var(--acc)}
 </style>
 </head><body><div class="wrap" id="app"></div>
 <script>
@@ -76,6 +83,7 @@ function record(qid,pick,mode){const q=QBY[qid],ok=pick===q.a,k=q.c+":"+q.cn;con
  const c=conState(k);c[ok?"r":"w"]++;c.lb=ST.batch[q.c]||0;
  // a concept you get right the very first time counts double: known material retires after one more correct answer
  if(ok){c.st+=((c.r+c.w)===1&&(ST.retire||3)>1)?2:1;c.miss=false;if(c.st>=(ST.retire||3))c.m=true}else{c.st=0;c.m=false;c.miss=true}
+ ST.ph=ST.ph||{};const ph=ST.ph[q.c]||(ST.ph[q.c]=[]);const pv=predict(q.c);if(!ph.length||Math.abs(ph[ph.length-1].p-pv)>=0.002){ph.push({t:Date.now(),p:Math.round(pv*1000)/1000});if(ph.length>400)ph.splice(1,1)}
  saveLocal();return ok}
 function conList(cid,secs){return Object.values(CON).filter(x=>x.c===cid&&(!secs||secs.includes(x.s)))}
 function stats(cid,secs){const L=conList(cid,secs);let m=0,l=0,u=0;L.forEach(x=>{const s=ST.cons[x.k];if(!s||(s.r+s.w)===0)u++;else if(s.m)m++;else l++});return {n:L.length,m,l,u}}
@@ -123,12 +131,21 @@ function render(){const A=document.getElementById("app");if(!NAME){A.innerHTML=n
  ({home:bindHome,drill:bindDrill,exam:bindExam,cover:bindCover,miss:()=>{}}[VIEW])()}
 function nameView(){return `<div class="modal"><div class="card"><h2 style="margin-top:0">Finals Prep</h2><p class="mut">ACG 2021 final, MAR 3023 Exam 4 and RMI 2302 final in one place. Type your name to save your progress on any device.</p><input type="text" id="nm" placeholder="Your name" autocomplete="name"><div class="row" style="margin-top:12px"><button class="btn" id="go">Start</button></div></div></div>`}
 function bindName(){const i=document.getElementById("nm");i.value=localStorage.getItem("fin_name")||"";const go=()=>{if(i.value.trim())login(i.value)};document.getElementById("go").onclick=go;i.onkeydown=e=>{if(e.key==="Enter")go()};i.focus()}
-function homeView(){let h=`<div class="grid3">`;COURSES.forEach(c=>{const s=stats(c.id);const p=Math.round(predict(c.id)*100);h+=`<div class="card"><div class="row" style="justify-content:space-between"><b>${esc(c.short)}</b><span class="small mut">${esc(c.when||"")}</span></div><div class="big">${p}%</div><div class="small mut">predicted exam score</div><div class="bar" style="margin:10px 0 6px"><i style="width:${s.m/s.n*100}%;background:var(--ok)"></i><i style="width:${s.l/s.n*100}%;background:var(--warn)"></i></div><div class="small"><span class="pill-ok">${s.m} mastered</span> · <span class="pill-w">${s.l} learning</span> · ${s.u} not seen yet · ${s.n} concepts</div></div>`});h+=`</div>`;
- const c=course();h+=`<div class="card"><h3 style="margin-top:0">${esc(c.name)}</h3><p class="small mut" style="white-space:pre-line">${esc(c.about||"")}</p><table><tr><th>Section</th><th>On exam</th><th>Concepts</th><th>Mastered</th><th>Not seen</th></tr>`;
- c.sections.forEach(s=>{const t=stats(c.id,[s.id]);h+=`<tr><td>${esc(s.name)}</td><td>${s.w?s.w+" Qs":"-"}</td><td>${t.n}</td><td class="pill-ok">${t.m}</td><td>${t.u}</td></tr>`});
- h+=`</table><div class="row" style="margin-top:12px"><button class="btn" data-go="drill">Start drilling</button><button class="btn sec" data-go="exam">Practice exam</button></div></div>`;
- h+=`<div class="card small"><b>How it works.</b> Every fact from the slides, lectures, notes, review sheets and Canvas quizzes is a <i>concept</i>, with several questions each. Get a concept right ${ST.retire} times in a row (a first-try correct answer counts as 2) and it is <b>mastered</b>: it stops showing up, along with every other question about the same thing, so your time goes to what you have not learned yet. Miss one and it comes back.The site decides this from your answers only.<div class="row" style="margin-top:8px">Retire a concept after <select id="ret">${[1,2,3,4,5].map(n=>`<option ${n==ST.retire?"selected":""}>${n}</option>`).join("")}</select> correct in a row</div></div>`;return h}
-function bindHome(){document.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>{VIEW=b.dataset.go;render()});const r=document.getElementById("ret");if(r)r.onchange=()=>{ST.retire=+r.value;Object.values(ST.cons).forEach(c=>{if(c.st>=ST.retire)c.m=true});saveLocal();render()}}
+function hist(cid){const a=(ST.ph&&ST.ph[cid])||[];const now=predict(cid);return a.length?a.concat([{t:Date.now(),p:now}]):[{t:Date.now()-1,p:now},{t:Date.now(),p:now}]}
+function svgLine(pts,cls,h){const w=600;if(pts.length<2)pts=[pts[0],pts[0]];let lo=Math.min(...pts.map(x=>x.p)),hi=Math.max(...pts.map(x=>x.p));if(hi-lo<0.04){const m=(hi+lo)/2;lo=m-0.02;hi=m+0.02}
+ const up=pts[pts.length-1].p>=pts[0].p,col=up?"var(--ok)":"var(--no)";const xy=pts.map((x,i)=>[(i/(pts.length-1))*w,h-6-((x.p-lo)/(hi-lo))*(h-12)]);
+ const d=xy.map((q,i)=>(i?"L":"M")+q[0].toFixed(1)+" "+q[1].toFixed(1)).join(" ");const last=xy[xy.length-1];
+ return `<svg class="${cls}" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true"><path d="${d}" fill="none" stroke="${col}" stroke-width="2.5" vector-effect="non-scaling-stroke" stroke-linejoin="round" stroke-linecap="round"/><circle cx="${last[0]}" cy="${last[1]}" r="4" fill="${col}"/></svg>`}
+function delta(pts){const a=pts[0].p,b=pts[pts.length-1].p,d=Math.round((b-a)*1000)/10;return `<span class="delta ${d>=0?"up":"down"}">${d>=0?"▲ +":"▼ "}${d.toFixed(1)}%</span> <span class="small mut">since you started</span>`}
+function homeView(){const c=course(),s=stats(c.id),H=hist(c.id),p=(predict(c.id)*100).toFixed(1);
+ let h=`<div class="small mut" style="font-weight:600">${esc(c.name)}</div><div class="big">${p}%</div><div>${delta(H)}</div>${svgLine(H,"chart",150)}<div class="small mut" style="margin-bottom:14px">Predicted exam score · ${esc(c.when||"")}</div>`;
+ h+=`<div class="row" style="margin-bottom:18px"><button class="btn" data-go="drill">Start drilling</button><button class="btn sec" data-go="exam">Practice exam</button></div>`;
+ h+=`<div class="grid3">`;COURSES.forEach(x=>{const st=stats(x.id),hx=hist(x.id);h+=`<div class="card ccard ${x.id===c.id?"on":""}" data-cc="${x.id}"><div class="row" style="justify-content:space-between"><b>${esc(x.short)}</b><b>${(predict(x.id)*100).toFixed(1)}%</b></div>${svgLine(hx,"spark",64)}<div class="bar"><i style="width:${st.m/st.n*100}%;background:var(--ok)"></i><i style="width:${st.l/st.n*100}%;background:var(--warn)"></i></div><div class="small mut" style="margin-top:6px">${st.m} mastered · ${st.u} not seen · ${st.n} concepts</div></div>`});h+=`</div>`;
+ h+=`<div class="card"><table><tr><th>Section</th><th>On exam</th><th>Concepts</th><th>Mastered</th><th>Not seen</th></tr>`;
+ c.sections.forEach(x=>{const t=stats(c.id,[x.id]);h+=`<tr><td>${esc(x.name)}</td><td>${x.w?x.w+" Qs":"-"}</td><td>${t.n}</td><td class="pill-ok">${t.m}</td><td>${t.u}</td></tr>`});
+ h+=`</table><p class="small mut" style="white-space:pre-line;margin-bottom:0">${esc(c.about||"")}</p></div>`;
+ h+=`<div class="card small"><b>How it works.</b> Every fact from the slides, lectures, notes, review sheets and Canvas quizzes is a <i>concept</i>, with several questions each. Get a concept right ${ST.retire} times in a row (a first-try correct answer counts as 2) and it is <b>mastered</b>: it stops showing up, along with every other question about the same thing. Miss one and it comes back. The site decides this from your answers only.<div class="row" style="margin-top:8px">Retire a concept after <select id="ret">${[1,2,3,4,5].map(n=>`<option ${n==ST.retire?"selected":""}>${n}</option>`).join("")}</select> correct in a row</div></div>`;return h}
+function bindHome(){document.querySelectorAll("[data-cc]").forEach(b=>b.onclick=()=>{COURSE=b.dataset.cc;localStorage.setItem("fin_course",COURSE);RUN=null;render()});document.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>{VIEW=b.dataset.go;render()});const r=document.getElementById("ret");if(r)r.onchange=()=>{ST.retire=+r.value;Object.values(ST.cons).forEach(c=>{if(c.st>=ST.retire)c.m=true});saveLocal();render()}}
 // ----- drill -----
 function drillView(){const c=course();if(!RUN||RUN.c!==COURSE){const secs=RUN_SECS();const s=stats(c.id,secs);let h=`<div class="card"><h3 style="margin-top:0">Drill: ${esc(c.short)}</h3><p class="small mut">Batches of 10. Brand-new concepts first, weighted by how many exam questions each ${c.unit} gets, plus anything you missed. Mastered concepts are skipped.</p><div class="small"><b>Sections</b> (none checked = all):<div style="margin-top:6px">`;
  c.sections.forEach(x=>{h+=`<label style="display:inline-block;margin:3px 10px 3px 0"><input type="checkbox" class="sc" value="${x.id}" ${secs&&secs.includes(x.id)?"checked":""}> ${esc(x.short||x.name)}</label>`});
@@ -180,4 +197,4 @@ function missView(){const c=course();const L=QS.filter(q=>q.c===c.id&&ST.recs[q.
  L.slice(0,150).forEach(q=>{const r=ST.recs[q.id],st=ST.cons[q.c+":"+q.cn];h+=`<div class="card"><div class="small mut">${esc(SECBY[q.s].short||SECBY[q.s].name)} · missed ${r.w}x, right ${r.r}x ${st&&st.m?"· <span class='pill-ok'>mastered now</span>":""}</div><div class="q" style="font-size:16px">${esc(q.q)}</div><div><b>Answer:</b> ${esc(q.o[q.a])}</div><details style="margin-top:6px"><summary>Explanation</summary><div style="white-space:pre-line;margin-top:6px">${fmtX(q.x)}</div></details></div>`});return h}
 const n0=localStorage.getItem("fin_name");if(n0)login(n0);else render();
 </script>
-<div id="upd" style="display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:50;max-width:560px;margin:0 auto;padding:12px 14px;border-radius:12px;background:#111;color:#fff;font:600 15px/1.4 system-ui">New questions were added. <button onclick="location.reload()" style="margin-left:8px;font:700 14px system-ui;padding:8px 12px;border-radius:8px;border:0;background:#fff;color:#111">Reload</button> <span style="font-weight:400;opacity:.8">Your progress is saved.</span></div><script>(function(){const B="78b55059bca5";let s=false;async function c(){if(s)return;try{const t=await (await fetch(location.pathname+"?v="+Date.now(),{cache:"no-store"})).text();const m=t.match(/const B="([0-9a-f]+)"/);if(m&&m[1]!==B){s=true;document.getElementById("upd").style.display="block"}}catch(e){}}setInterval(c,180000);document.addEventListener("visibilitychange",()=>{if(!document.hidden)c()})})();</script></body></html>
+<div id="upd" style="display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:50;max-width:560px;margin:0 auto;padding:12px 14px;border-radius:12px;background:#111;color:#fff;font:600 15px/1.4 system-ui">New questions were added. <button onclick="location.reload()" style="margin-left:8px;font:700 14px system-ui;padding:8px 12px;border-radius:8px;border:0;background:#fff;color:#111">Reload</button> <span style="font-weight:400;opacity:.8">Your progress is saved.</span></div><script>(function(){const B="9261da3b9c3b";let s=false;async function c(){if(s)return;try{const t=await (await fetch(location.pathname+"?v="+Date.now(),{cache:"no-store"})).text();const m=t.match(/const B="([0-9a-f]+)"/);if(m&&m[1]!==B){s=true;document.getElementById("upd").style.display="block"}}catch(e){}}setInterval(c,180000);document.addEventListener("visibilitychange",()=>{if(!document.hidden)c()})})();</script></body></html>
